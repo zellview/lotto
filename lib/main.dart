@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+const minNumber = 1;
+const maxNumber = 49;
+
 var random = new Random();
 var taken = [];
 
@@ -27,7 +30,13 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() { return _MyHomePageState(); }
+  MyHomePageState createState() { return MyHomePageState(); }
+}
+
+int NextNumber () {
+//BEGIN
+  return 1 + random.nextInt(49);
+// END NextNumber
 }
 
 class Lottozahl extends StatelessWidget {
@@ -35,8 +44,9 @@ class Lottozahl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     do {
-      no = 1 + random.nextInt(49);
+      no = NextNumber();
     } while (taken.contains(no));
     taken.add(no);
 
@@ -47,7 +57,8 @@ class Lottozahl extends StatelessWidget {
       decoration: BoxDecoration(
         // color: Colors.yellow,
         // color: Colors.deepPurple,
-        color: Colors.cyan,
+        // color: Colors.cyan,
+        color: Colors.blueGrey,
         shape: BoxShape.circle,
         border: Border.all(color: Colors.black),
       ),
@@ -59,7 +70,7 @@ class Lottozahl extends StatelessWidget {
   }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
 
   void _NeueZiehung() {
     setState((){
