@@ -42,12 +42,12 @@ class Lottozahl extends StatelessWidget {
     taken.add(no);
 
     return Container(
-     width: 80,
+      width: 80,
       height: 80,
       alignment:Alignment.center,
       decoration: BoxDecoration(
-        color: Colors.yellow,
-        // color: Colors.deepPurple,
+        // color: Colors.yellow,
+        color: Colors.deepPurple,
         shape: BoxShape.circle,
         border: Border.all(color: Colors.black),
       ),
