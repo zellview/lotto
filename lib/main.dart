@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-var rng = new Random(1);
+var random = new Random();
 var taken = [];
 
 void main() {
@@ -15,9 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Zellview Lotto',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-      ),
-      home: MyHomePage(title: 'zellview-lotto'),
+      theme: ThemeData(      ),
+      home: MyHomePage(title: 'zellview-lotto-home'),
     );
   }
 }
@@ -37,7 +36,7 @@ class Lottozahl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     do {
-      no = 1 + rng.nextInt(49);
+      no = 1 + random.nextInt(49);
     } while (taken.contains(no));
     taken.add(no);
 
