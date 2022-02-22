@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-const minNumber = 1;
-const maxNumber = 49;
+const minNumber = 2;
+const maxNumber = 48;
 
 var random = new Random();
 var taken = [];
